@@ -1,0 +1,81 @@
+<!--html注释-->
+<!--1.标签 - 承载内容 -->
+<!--2.层叠样式表 -->
+<!--3.JavaScript - 交互式行为 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>蔡维洋的技术专栏</title>
+        <!-- css - cascading style sheet -->
+        <style>
+            h1{
+                color: purple;/* 颜色 */
+                font-size: 2cm;/* 字体大小 */
+                font-family: 楷体;/* 字体 */
+            }
+            p{
+                font-size: 1cm;
+            }
+            p:first-letter{
+                font-size: 1.5cm;
+                color: aqua;
+            }
+            .a{
+                color: green;
+            }
+            .b{
+                color: red;
+            }
+            a{
+                color: red;
+                text-decoration: none;
+            }
+            a:hover{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+    <a name="shit"></a>
+    <h1>&lt;蔡维洋&gt;博客 - H<sub>2</sub>0</h1>
+        <hr>
+    <h2>蔡维洋喜欢吃的水果</h2>
+    <ol>
+        // 页面链接
+        <li><a href="http://www.baidu.com"target="_blank">百度</a></li>
+        <li>火龙果</li>
+        <li>热带水果
+            <ol>
+                <li>榴莲</li>
+                <li>山竹</li>
+            </ol>
+        </li>
+    </ol>
+    <dl>
+        <dt>Python</dt>
+        <dd>弱语言</dd>
+        <dd>需要解释器</dd>
+    </dl>
+    <p class="a">床&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前<del>明月光</del><sup>1</sup></p>
+        <p class="b"><ins>疑是</ins>地上霜&copy;</p>
+    <p>举头&trade;望<strong>明月</strong><sup>2</sup></p>
+    <p>低头<strong><em>思</em></strong>故乡</p>
+    <button onclick="showWriter()">确定</button>
+    <button onclick="shutDown()">关闭</button>
+    <p>
+        <a href="#shit">回顶部</a>
+    </p>
+    <script>
+        function shutDown(){
+            if (window.confirm("确定要关闭吗？")){
+                window.close()
+            }
+        }
+        // 驼峰命名法 -Camel Notation
+        function  showWriter(){
+            window.alert("作者：李白");
+        }
+    </script>
+    </body>
+</html>
