@@ -44,7 +44,7 @@ class TestFixtures02(unittest.TestCase):
         print("tearDownClass结束")
 
     def test_002(self):
-        print("测试类2")
+        print("测试类2的测试用例")
 
 
 # 每个模块执行前执行
