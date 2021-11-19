@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ajax请求</title>
+    </head>
+    <body>
+        <button id="load">加载更多</button>
+        <div id="photos"></div>
+        <script>
+        (() =>{
+            // 创建异步请求对象
+            let xhr= new XMLHttpRequest()
+            // open方法的第一个参数是请求类型，第二个参数是请求的url，第三个参数必须设置为true(异步请求)
+            xhr.open('get',"http://api.tianap从                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             i.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=30",true)
+            // 绑定事件回调函数，在收到服务器返回的数据后要对页面进行局部刷新
+            xhr.addEventListener('readystatechange',() => {
+                if (xhr.readyState == 4 && xhr.status == 200){
+                    //将返回的JSON字符串转换成JavaScript的对象
+                    let json = JSON.parse(xhr.responseText)
+                    json.newslist.forEach((mm) =>{
+                        console.log(mm.picUrl)
+                    })
+                }
+            })
+            //发送异步请求
+        })()
+        </script>
+    </body>
+</html>
