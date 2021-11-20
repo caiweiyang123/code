@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28dc97e8-86bf-434d-8cac-320e9576af2f" name="Default Changelist" comment="修改了代码的结构">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Danei_Python/day01/exercise01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/caselist.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/common/HTMLTestRunner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/common/Log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/common/configDB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/common/configEmail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/common/configHttp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/getpathInfo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/geturlParams.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/readConfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/readExcel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/runAll.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/testCase/test01case.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/testFile/case/userCase.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/test_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_test/unittest_study/InterfaceTest/test_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_study/cat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_study/study.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_study/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_test/fibo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_test/py_unittest.py" beforeDir="false" />
-    </list>
+    <list default="true" id="28dc97e8-86bf-434d-8cac-320e9576af2f" name="Default Changelist" comment="学习unittest框架" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +15,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -60,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -217,7 +194,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637393451537</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="学习unittest框架">
+      <created>1637420604309</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637420604309</updated>
+    </task>
+    <task id="LOCAL-00006" summary="学习unittest框架">
+      <created>1637420611689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637420611689</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +226,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="学习了新的代码" />
     <MESSAGE value="修改了代码的结构" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了代码的结构" />
+    <MESSAGE value="学习unittest框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习unittest框架" />
   </component>
 </project>
