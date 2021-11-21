@@ -42,9 +42,9 @@ class TestUserLogin(unittest.TestCase):
         info = RunMain().run_main(self.method, url, data1)
         # 将响应转换为字典格式
         ss = json.loads(info)
-        if self.case_name =="login":# 如果case_name是login，说明合法，返回的code应该为200
-            self.assertEqual(ss["code"],200,msg="登录成功")
+        if self.case_name == "login":  # 如果case_name是login，说明合法，返回的code应该为200
+            self.assertEqual(ss["code"], 200, msg="登录成功")
         if self.case_name == "login_error":
             self.assertEqual(ss["code"], -1, msg="参数不正确")
         if self.case_name == "login_null":
-            self.assertEqual(ss["code"],10001,msg="参数不能为空")
+            self.assertEqual(ss["code"], 10001, msg="参数不能为空")
