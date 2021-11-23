@@ -25,22 +25,44 @@
 #     print("响应失败")
 
 
+# import requests
+# import assertpy
+#
+#
+# url = "https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php"
+# ip = ["202.102.199.68", "114.106.183.223"]
+#
+# for i in range(len(ip)):
+#     params = {'query': ip[i], 'resource_id': 6006}
+#     response = requests.get(url=url, params=params)
+#     if response.status_code == 200:
+#         assertpy.assert_that(response.json()["status"]).is_equal_to("0")
+#         assertpy.assert_that(response.json()['data'][0]['origip']).is_equal_to(ip[i])
+#         assertpy.assert_that(response.json()['data'][0]['location']).does_not_contain('上海') # 断言响应体不包含上海
+#         print('响应成功')
+#     else:
+#         print('响应失败')
+#
+#     print(response.json())
+
 import requests
 import assertpy
+import pytest
 
 
-url = "https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php"
-ip = ["202.102.199.68", "114.106.183.223"]
+class Test(object):
+    # ip = ["223.167.150.251", "223.167.150.220", "223.167.150.444"]
+    # id = ["6006", "6007", "6008"]
+    query = [("223.167.150.251", "6006"), ("223.167.150.220", "6007"), ("223.167.150.444", "6008")]
 
-for i in range(len(ip)):
-    params = {'query': ip[i], 'resource_id': 6006}
-    response = requests.get(url=url, params=params)
-    if response.status_code == 200:
-        assertpy.assert_that(response.json()["status"]).is_equal_to("0")
-        assertpy.assert_that(response.json()['data'][0]['origip']).is_equal_to(ip[i])
-        assertpy.assert_that(response.json()['data'][0]['location']).does_not_contain('上海') # 断言响应体不包含上海
-        print('响应成功')
-    else:
-        print('响应失败')
+    @pytest.mark.parametrize("ip, id", query)
+    # @pytest.mark.parametrize("ip", ip)
+    # @pytest.mark.parametrize("id", id)
+    def test_1(self, ip,id):
+        url_2 = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php'
 
-    print(response.json())
+        params= {'query':ip,'resource_id':id}
+        response = requests.get(url=url_2, params=params)
+        print(response.json())
+        assertpy.assert_that(response.json()['status']).is_equal_to('0')
+

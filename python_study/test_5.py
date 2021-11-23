@@ -1,21 +1,25 @@
-import requests
-import assertpy
-import pytest
+# a = [1, 2, 3, 4]
+# c = 'abcdef'
+# print(a[::-1])
+# print(c[::-1])
+# print(list(reversed(a)))
+# print(list(reversed(c)))
+#
+# print('{greet} from {language}.'.format( language='Python',greet="Hello world"))
+# # print('%s from %s.' % ("Hello world", 'Python'))
+# from flask import Flask
+#
+# app = Flask(__name__)
+#
+#
+# @app.route('/')
+# def hello():
+#     return "Hello world!"
+#
+#
+# if __name__ == '__main__':
+#     app.run()
 
-
-class Test(object):
-    # ip = ["223.167.150.251", "223.167.150.220", "223.167.150.444"]
-    # id = ["6006", "6007", "6008"]
-    query = [("223.167.150.251", "6006"), ("223.167.150.220", "6007"), ("223.167.150.444", "6008")]
-
-    @pytest.mark.parametrize("ip, id", query)
-    # @pytest.mark.parametrize("ip", ip)
-    # @pytest.mark.parametrize("id", id)
-    def test_1(self, ip,id):
-        url_2 = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php'
-
-        params= {'query':ip,'resource_id':id}
-        response = requests.get(url=url_2, params=params)
-        print(response.json())
-        assertpy.assert_that(response.json()['status']).is_equal_to('0')
-
+# li = ['a', 'b', 'c', 'd', 'e']
+# for i, e in enumerate(li):
+#     print("index:", i, "element:", e)
