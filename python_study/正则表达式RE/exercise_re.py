@@ -2,14 +2,14 @@ import re
 
 # r = re.findall("1[0-9]{10}","张三：15850162469")
 # print(r)
-# s = "321323199306100633"
-# r = re.search(r"\d{17}(\d|x)",s).group()
-# print(r)
-
-r = dir(re)
+s = "《天龙八部》山地车山地车是的,是第三大城市的《射雕英雄传》撒旦发射点发射点。《碧血剑》，《倚天屠龙记》阿是的是的萨《鹿鼎记》撒sda 《定》"
+r = re.findall(r"《\w+?》",s)
 print(r)
-pattern = "asdsdas"
-regex = complex(pattern, flags=0)
+
+# r = dir(re)
+# print(r)
+# pattern = "asdsdas"
+# regex = complex(pattern, flags=0)
 # # 练习1 匹配一个.com邮箱格式字符串
 # s1 = "invest_cai@163.com"
 # print(re.findall(r"\w+@\w+.com$", s1))
