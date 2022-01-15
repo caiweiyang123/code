@@ -1,7 +1,7 @@
 """
     程序的入口
 """
-import sys,os
+import sys, os
 from core import src
 
 # 添加解释器环境变量
