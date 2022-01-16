@@ -2,7 +2,9 @@
     购物车接口
 """
 from db import db_hander
+from lib import common
 
+shop_logger = common.get_logger('shop')
 
 # 商城准备结算接口
 def pay_interface(login_user, shop_car):

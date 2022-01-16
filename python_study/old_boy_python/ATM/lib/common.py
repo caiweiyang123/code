@@ -2,7 +2,8 @@
     存放配置信息
 """
 import hashlib
-
+import logging.config
+from config import settings
 
 # md5加密
 def get_pwd_md5(password):
@@ -27,9 +28,16 @@ def login_auth(func):
 
     return inner
 
-# 添加日志功能
+# 添加日志功能(日志功能在接口层使用)
 import logging
 def get_logger(log_type):
     """
     :param log_type:比如是 user日志，bank日志，购物商城日志
     """
+    #1.加载日志配置信息
+    logging.config.dictConfig(
+        settings.LOGGING_DIC
+    )
+    #2.获取日志对象
+    logger = logging.getLogger(log_type)
+    return logger

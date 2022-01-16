@@ -1,5 +1,7 @@
 from db import db_hander
+from lib import common
 
+admin_logger = common.get_logger('admin')
 
 # 修改额度接口
 def change_balance_interface(username, money):
@@ -8,10 +10,11 @@ def change_balance_interface(username, money):
         # 修改额度
         user_dic['balance'] = int(money)
         # 记录流水
-        update_balance_flow = "额度修改成功"
+        update_balance_flow = f"用户{username}额度修改成功"
         user_dic['flow'].append(update_balance_flow)
         # 保存修改后的用户数据
         db_hander.save(user_dic)
+        admin_logger.info(update_balance_flow)
         return True, update_balance_flow
     return False, "修改的用户不存在"
 

@@ -2,7 +2,9 @@
     银行接口
 """
 from db import db_hander
+from lib import common
 
+bank_logger = common.get_logger('bank')
 
 # 提现接口(手续费5%)
 def withdraw_interface(username, money):
@@ -21,6 +23,7 @@ def withdraw_interface(username, money):
         user_dic['flow'].append(flow)
         # 4.再保存数据
         db_hander.save(user_dic)
+        bank_logger.info(flow)
         return True, flow
     else:
         return False, "提现金额不足，请重新输入！"
