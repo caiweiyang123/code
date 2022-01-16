@@ -23,6 +23,6 @@
 #         打印”GAME OVER“
 #         停止背景音乐，最好淡出
 # import study
-#
-# r2= study.Rectangle(4,5)
-# r2.getarea()
+
+r2= study.Rectangle(4,5)
+r2.getarea()
