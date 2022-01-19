@@ -8,3 +8,5 @@
 [2022-01-16 09:17:06,914][MainThread:13776][task_id:bank][bank_interface.py:26][INFO][用户admin，提现金额111成功，手续费为5.550000000000011]
 [2022-01-16 09:17:20,305][MainThread:13776][task_id:bank][bank_interface.py:26][INFO][用户admin，提现金额8成功，手续费为0.40000000000000036]
 [2022-01-16 09:17:33,736][MainThread:14156][task_id:user][user_interface.py:58][INFO][admin登陆成功]
+[2022-01-16 13:44:25,725][MainThread:1504][task_id:user][user_interface.py:38][INFO][caiweiyang注册成功！]
+[2022-01-16 13:44:36,211][MainThread:1504][task_id:user][user_interface.py:58][INFO][caiweiyang登陆成功]
