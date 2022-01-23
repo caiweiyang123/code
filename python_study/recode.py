@@ -113,5 +113,6 @@ def print_commodity_info():
     for key, value in dict_commodity_info.items():
         print(f"编号：{key}，名称：{value['name']}，单价：{value['price']}。")
 
+if __name__ == '__main__':
 
-select_menu()
+    select_menu()
