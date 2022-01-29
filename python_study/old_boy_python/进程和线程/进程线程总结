@@ -1,0 +1,81 @@
+死锁现象
+    即便知道如何抢锁和释放锁，也极有可能造成程序的死锁现象
+    后续写项目时也不会自己处理所的问题，都是底层封装好的
+
+递归锁
+    他也是一把互斥锁，但是他可以被第一个强盗的人连续acquire和release
+    每acquire内部技术加一，每release内部技术减一
+    只要计数不为0，永远不会被其他人抢到
+
+信号量
+    信号量相当于多个锁
+
+event事件
+    一些线程/进程等待其他线程/进程运行结束才开始运行
+    from threading import Event
+    e = Event()
+    # 等待
+    e.wait()
+    # 发送信号
+    e.set()
+
+各种队列
+    常见队列 queue
+    先进先出 q = Queue()
+    后进先出 q = LifoQueue()
+    优先级   q = queue.Queue()
+
+进程池线程池
+    硬件发展赶不上软件的开发速度
+
+    思考我们以前借助于开设进程和线程的方式来实现TCP服务端的开发
+    每来一个客户端就开设一个进程或者线程
+
+    无论是开设进程还是开设线程都需要消耗一定的资源
+    我们应该保证计算机硬件的安全下，最大限度地利用计算机
+
+    池的概念
+    它的出现是为了保证计算机硬件的安全
+    降低了程序的运行效率但是保证了计算机硬件的安全
+
+    直接调用封装好模块
+    from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+    # 1.生成进程池线程池
+    pool1 = ThreadingPoolExecutor()
+    pool2 = ProcessPoolExecutor()
+    # 2. 朝池子中提交任务
+    pool1.submit(task,args...) 异步提交
+    # 3.submit其实会返回一个Futures类的对象，该对象调用result就能获得到任务的结果
+    res = pool1.submit(task,args...)
+    res.result() 同步
+    # 4.池子对象的方法
+    pool1.shotdown() 关闭池子，等待池子中所有的任务结束，再继续执行后面代码
+    #5.异步回调机制
+    给每一个异步提交的任务绑定一个方法，一旦任务结束了有结果了会立刻触发该方法
+    pool1.submit(task,args...).add_done_callback(call_back)
+
+协程
+    单线程下实现并发
+    多道技术，切换+保存状态
+    通过代码层面检测IO行为，一旦遇到IO代码层面实现切换
+    这样给操作系统的感觉好像这个程序一直运行没有IO
+    欺骗操作系统从而最大化利用CPU
+
+    计算密集型的不行
+    IO密集型的可以
+
+    gevent 模块
+    该模块可以帮我们检测IO并实现切换
+    from gevent import monkey
+    monkey.patch_all()
+    from gevent import spawn
+
+    # spawn 在检测的时候 是异步提交的
+    spawn(server).join()
+    g = spawn(server)
+    g.join
+
+总结
+多进程下开设多线程
+多线程下利用协程
+最大限度的提升软件的效率
