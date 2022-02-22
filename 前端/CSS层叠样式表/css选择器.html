@@ -5,25 +5,52 @@
     <title>css选择器</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-/*       #d1 {-->
-             color:yellowgreen;-->
-           }
-<!--        .c1 {-->
-<!--        color:red;}-->
-<!--        span{color:red;}*/
-        /*后代选择器*/
-        div span {color:red;}
+<!--&lt;!&ndash;/*       #d1 {&ndash;&gt;-->
+<!--&lt;!&ndash;             color:yellowgreen;&ndash;&gt;-->
+<!--&lt;!&ndash;           }&ndash;&gt;-->
+<!--&lt;!&ndash;        .c1 {&ndash;&gt;-->
+<!--&lt;!&ndash;        color:red;}&ndash;&gt;-->
+<!--&lt;!&ndash;        span{color:red;}*/&ndash;&gt;-->
+
+<!--&lt;!&ndash;        /*后代选择器*/&ndash;&gt;-->
+<!--&lt;!&ndash;        /*div span {color:red;}*/&ndash;&gt;-->
+<!--&lt;!&ndash;        /* 儿子选择器*/&ndash;&gt;-->
+<!--&lt;!&ndash;        div>span {color:red;}&ndash;&gt;-->
+<!--&lt;!&ndash;        /*毗临选择器*/&ndash;&gt;-->
+<!--&lt;!&ndash;        div+p {color:red;}&ndash;&gt;-->
+
+<!--&lt;!&ndash;        div~span{color:yellow;}&ndash;&gt;-->
+
+<!--        /*属性选择器*/-->
+<!--&lt;!&ndash;        [username] {&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color:red;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;            [username="jason"] {&ndash;&gt;-->
+<!--&lt;!&ndash;                background-color:orange;&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;            input[username='kevin']{&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color:wheat;&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
     </style>
 </head>
 <body>
     <span >span111</span>
     <span >span2222</span>
     <div >div
-        <p>div里面的p</p>
+        <p>div里面的p
+            <span>p里面的span</span>
+            <span>p里面的span</span>
+        </p>
         <span>div里面的span</span>
     </div>
     <p >pppp</p>
     <span >span111</span>
     <span >span2222</span>
+    <p >pppp</p>
+    <input type="text" username="">
+    <input type="text" username="jason">
+    <input type="text" username="kevin">
+    <p username="tank">水箱老师</p>
+    <div username="jason">矮子老师</div>
 </body>
 </html>
