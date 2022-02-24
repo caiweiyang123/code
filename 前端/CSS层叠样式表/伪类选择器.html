@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>伪类选择器</title>-->
+<!--    <style>-->
+<!--        a:link{-->
+<!--        color:red;}-->
+<!--        a:hover{-->
+<!--        color:aqua;}-->
+<!--        a:active{-->
+<!--        color:black;}-->
+<!--        a:visited{-->
+<!--        color:darkgray;}-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<a href="http://www.baidu.com">百度一下，你就知道！</a>-->
+<!--</body>-->
 <head>
     <meta charset="UTF-8">
-    <title>伪类选择器</title>
+    <title>伪元素选择器</title>
     <style>
-
+<!--        p:first-letter{-->
+<!--        font-size:48px;-->
+<!--        color:orange;}-->
+        p:before{/*在文本开头，同css添加内容*/
+        content:"你说的对!";
+        color:red;}
+        p:after{
+        content:"?";
+        color:blue;}
     </style>
 </head>
 <body>
-<a href="http://www.baidu.com">百度一下，你就知道！</a>
+    <p>书籍是人类进步的阶梯！</p>
 </body>
 </html>
