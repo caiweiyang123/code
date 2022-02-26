@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style>
+        body{
+        margin:0;
+        }
+        /*p {
+        margin-left:0;
+        margin-right:0;
+        margin-top:0;
+        margin-bottom:0;}*/
+        #dd {
+        margin:0 auto;
+        }
+        #d1 {
+        border:3px solid red;
+        padding:10px 20px 30px;
+        }
+
+    </style>
+</head>
+<body>
+<p style="border:1px solid red;">盒子模型：快递盒与快递盒之间的距离（标签与标签之间距离  margin外边框）</p>
+<p style="border:1px solid red;">盒子的厚度（标签的边框border）</p>
+<p>盒子里面的物体到盒子的距离（内容到边框的距离  padding内边框）</p>
+<p>物体的大小（内容 content ）</p>
+<p>margin只取大的不叠加</p>
+<div style="border:3px solid red; height:400px;width:400px">
+    <div id="dd" style="border:1px solid orange;height:40px;width:40px;background-color:blue;"></div>
+</div>
+<p id="d1">填充物</p>
+</body>
+</html>

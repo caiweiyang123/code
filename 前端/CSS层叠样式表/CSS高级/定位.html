@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        body {
+            margin:0;
+        }
+        #d1 {
+            height:100px;
+            width:100px;
+            background-color:yellow;
+            left:100px;
+            top:100px;
+            position:relative;
+        }
+        #d2 {
+            height:100px;
+            width:200px;
+            background-color:red;
+            position:relative;
+        }
+        #d3 {
+            height:200px;
+            width:400px;
+            background-color:yellowgreen;
+            position:absolute;
+            left:200px;
+            top:100px;
+        }
+        #d4 {
+            position:fixed;
+            bottom:10px;
+            right:20px;
+
+            height:20px;
+            width:70px;
+            background-color:white;
+            border:3px solid black;
+        }
+    </style>
+</head>
+<body>
+<div style="height:500px;background-color:red"></div>
+<div style="height:500px;background-color:greenyellow"></div>
+<div style="height:500px;background-color:blue"></div>
+<div id="d4">回到顶部</div>
+</body>
+</html>
