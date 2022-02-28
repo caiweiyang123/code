@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input框</title>
+</head>
+<body>
+<input type="text" value="老板 来呀" id="d1">
+<script>
+    let iele=document.getElementById("d1")
+    iele.onfocus = function() {
+        iele.value = ""
+    }
+    iele.onblur = function(){
+        iele.value="没钱不去！"
+    }
+</script>
+</body>
+</html>
