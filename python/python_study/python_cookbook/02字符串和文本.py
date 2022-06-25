@@ -67,3 +67,9 @@
 # comment = re.compile(r"/\*((?:.|\n)*?)\*/")
 # res = comment.findall(text)
 # print(res)
+
+# 2.14字符串链接以及合并
+data = ["ace",20,91.1]
+# result = ",".join(data) #TypeError: sequence item 1: expected str instance, int found
+result = ",".join(str(item) for item in data)
+print(result)
