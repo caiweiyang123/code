@@ -2,6 +2,7 @@
 ftp 文件服务器 客户端
 """
 import sys
+import time
 from socket import *
 
 # 服务器地址
@@ -54,6 +55,31 @@ class FTPClient:
         else:
             print(data)
 
+    # 文件上传
+    def do_put(self, filename):
+        try:
+            f = open(filename, "rb")
+        except Exception:
+            print("该文件不存在")
+            return
+        # 获取文件名
+        filename = filename.split("/")[-1]
+        # 发送请求
+        self.sockfd.send("P " + filename).encode()
+        # 接受反馈
+        data = self.sockfd.recv(1024).decode()
+        if data == "OK":
+            while True:
+                data = f.read()
+                if not data:
+                    time.sleep(0.1)
+                    self.sockfd.send(b"##")
+                    break
+                self.sockfd.send(data)
+            f.close()
+        else:
+            print(data)
+
 
 def main():
     sockfd = socket()
@@ -83,6 +109,9 @@ def main():
         elif cmd[:3] == "get":
             filename = cmd.strip().split(" ")[-1]
             ftp.do_get(filename)
+        elif cmd[:3] == "put":
+            filename = cmd.strip().split(" ")[-1]
+            ftp.do_put(filename)
         else:
             print("请输入正确指令！")
 

@@ -62,6 +62,20 @@ class FTPServer(Thread):
                 break
             self.connfd.send(data)
 
+    def do_put(self,filename):
+        if os.path.exists(filename):
+            self.connfd.send("文件已经存在".encode())
+            return
+        else:
+            self.connfd.send(b"OK")
+        f = open(filename,"wb")
+        while True:
+            data = self.connfd.recv(1024)
+            if data == b"##":
+                break
+            f.write(data)
+        f.close()
+
     # 循环接受请求， 分情况调用功能函数
     def run(self):
         while True:
@@ -73,6 +87,9 @@ class FTPServer(Thread):
             elif data[0] == "G":
                 filename = data.strip().split(" ")[-1]
                 self.do_get(filename)
+            elif data[0] == "P":
+                filename = data.strip().split(" ")[-1]
+                self.do_put(filename)
 
 
 # 搭建网络服务端模型
