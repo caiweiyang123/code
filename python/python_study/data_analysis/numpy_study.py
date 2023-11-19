@@ -1,0 +1,33 @@
+import numpy as np
+
+# arr = np.array(['张三','李四','王五'])
+# print(arr)
+# print(type(arr))
+# arr1 = np.array((['张三','李四','王五'],[12,22,55]))
+# print(arr1)
+# print(type(arr1))
+
+# arr1 =np.arange(4)
+# arr2 =np.arange(7,12)
+# arr3 =np.arange(100,110,2)
+# print(arr1)
+# print(arr2)
+# print(arr3)
+
+# rnd = np.random.rand()
+# arr1 = np.random.rand(4)
+# arr2 = np.random.rand(2,4)
+# arr3 = np.random.rand(2,4,3)
+# print(rnd)
+# print(arr1)
+# print(arr2)
+# print(arr3)
+
+rndint = np.random.randint(10,99)
+arr1=np.random.randint(10,99,size=(3))
+arr2=np.random.randint(10,99,size=(3,2))
+arr3=np.random.randint(10,99,size=(3,2,4))
+print(rndint)
+print(arr1)
+print(arr2)
+print(arr3)
