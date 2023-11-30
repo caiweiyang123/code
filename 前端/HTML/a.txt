@@ -1,3 +1,0 @@
-<h1>hello big world</h1>
-<a href="https://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&dyTabStr=MCwzLDEsMiw2LDQsNSw4LDcsOQ%3D%3D&word=%E6%96%B0%E5%9E%A3%E7%BB%93%E8%A1%A3/">click me! give you some color to see see !</a>
-<img src="https://img1.baidu.com/it/u=1018646342,3341407982&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=439" />
