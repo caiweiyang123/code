@@ -17,8 +17,13 @@ df = pd.read_excel('test_pandas.xlsx', '成绩表')
 # print(df.columns)
 # print(df.values)
 
-for index, value in df.items():
-    print(index)
-    print(value)
-    print(type(value))
-    print('-' * 20)
+# for index, value in df.items():
+#     print(index)
+#     print(value)
+#     print(type(value))
+#     print('-' * 20)
+# for index,row in df.iterrows():
+#     print(row.iloc[0])
+#     print(row.iloc[1])
+#     print(row.iloc[2])
+#     print("*"*50)

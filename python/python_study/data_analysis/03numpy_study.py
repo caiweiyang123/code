@@ -45,6 +45,10 @@ import pandas as pd
 # print(arr2,type(arr2))
 # print(arr3,type(arr3))
 
+df = pd.read_excel("test_pandas.xlsx","成绩表")
+for t,s in df.items():
+    print(t)
+    print(s)
 # arr = np.array(([100,'123',99]))
 # print(arr.astype('int'))
 # print(arr.astype('float'))
@@ -52,4 +56,4 @@ import pandas as pd
 
 # 3.3.2 缺失值处理
 
-arr = np.array()
+# arr = np.array()
