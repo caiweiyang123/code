@@ -64,19 +64,116 @@ def shell_sort(arr):
 def selection_sort(arr):
     # 遍历整个数组
     for i in range(len(arr)):
-        min_index = i  # 记录最小元素的索引
+        # 初始化最小元素的索引
+        min_index = i
 
         # 在未排序部分找到最小元素的索引
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[min_index]:
+        for j in range(i+1,len(arr)):
+            if arr[j]<arr[min_index]:
                 min_index = j
+        
+        
 
         # 将找到的最小元素与当前位置交换
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+        arr[i],arr[min_index] = arr[min_index],arr[i]
 
+# 4. 堆排序
+"""
+4.1 排序思想
+堆排序 (Heapsort) 是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种；
+它通过堆来进行选择数据；需要注意的是排升序要建大堆，排降序建小堆。
+"""
+def heapify(arr, n, i):
+    largest = i  # 初始化父节点索引为最大值
+    left_child = 2 * i + 1
+    right_child = 2 * i + 2
+
+    # 检查左子节点是否存在且大于父节点
+    if left_child < n and arr[left_child] > arr[largest]:
+        largest = left_child
+
+    # 检查右子节点是否存在且大于父节点或左子节点
+    if right_child < n and arr[right_child] > arr[largest]:
+        largest = right_child
+
+    # 如果最大值不是父节点，则交换父节点和最大值节点，并递归调整堆
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+
+    # 构建最大堆
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # 一个个取出堆顶元素，再调整堆
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+
+# 5. 冒泡排序
+"""
+5.1 排序思想
+交换排序基本思想：所谓交换，就是根据序列中两个记录键值的比较结果来对换这两个记录在序列中的位置。
+交换排序的特点是：将键值较大的记录向序列的尾部移动，键值较小的记录向序列的前部移动。
+"""
+def bubble_sort(arr):
+    for i in range(len(arr)-1):
+        for j in range(i+1,len(arr)):
+            if arr[i]> arr[j]:
+                arr[i],arr[j] = arr[j],arr[i]
+
+
+# 6. 快速排序
+"""
+6.1 排序思想
+快速排序是 Hoare 于1962年提出的一种二叉树结构的交换排序方法，
+其基本思想为：任取待排序元素序列中的某元素作为基准值，按照该排序码将待排序集合分割成两子序列，
+左子序列中所有元素均小于基准值，右子序列中所有元素均大于基准值，然后最左右子序列重复该过程，直到所有元素都排列在相应位置上为止。
+
+"""
+#递归版
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        # 小于基准值的元素放在左边，大于基准值的元素放在右边
+        left = [x for x in arr[1:] if x <= pivot]
+        right = [x for x in arr[1:] if x > pivot]
+        # 递归地对左右两部分进行快速排序
+        return quick_sort(left) + [pivot] + quick_sort(right)
+
+# 指针版
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    stack = [(0, len(arr) - 1)]
+    while stack:
+        low, high = stack.pop()
+        if low < high:
+            pivot_index = partition(arr, low, high)
+            stack.append((low, pivot_index - 1))
+            stack.append((pivot_index + 1, high))
+    
+    return arr
+
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1
 
 if __name__ == '__main__':
     # 示例
-    arr = [12, 34, 54, 2, 3, 34, 73]
+    arr = [64, 34, 25, 12, 22, 11, 90]
     selection_sort(arr)
     print("排序后的数组：", arr)
