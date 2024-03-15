@@ -127,7 +127,7 @@ def bubble_sort(arr):
                 arr[i],arr[j] = arr[j],arr[i]
 
 
-# 6. 快速排序
+# 6. 快速排序(重点)
 """
 6.1 排序思想
 快速排序是 Hoare 于1962年提出的一种二叉树结构的交换排序方法，
@@ -135,20 +135,20 @@ def bubble_sort(arr):
 左子序列中所有元素均小于基准值，右子序列中所有元素均大于基准值，然后最左右子序列重复该过程，直到所有元素都排列在相应位置上为止。
 
 """
-#递归版
-def quick_sort(arr):
+#快排递归版
+def quick_sort_recursion(arr):
     if len(arr) <= 1:
         return arr
     else:
         pivot = arr[0]
         # 小于基准值的元素放在左边，大于基准值的元素放在右边
-        left = [x for x in arr[1:] if x <= pivot]
-        right = [x for x in arr[1:] if x > pivot]
+        left = [x for x in arr[1:] if x > pivot]
+        right = [x for x in arr[1:] if x <= pivot]
         # 递归地对左右两部分进行快速排序
-        return quick_sort(left) + [pivot] + quick_sort(right)
+        return quick_sort_recursion(left) + [pivot] + quick_sort_recursion(right)
 
-# 指针版
-def quick_sort(arr):
+# 快排指针版
+def quick_sort_pointer(arr):
     if len(arr) <= 1:
         return arr
     
@@ -172,8 +172,49 @@ def partition(arr, low, high):
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
+# 7.归并排序 (重点)
+"""
+归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法，该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
+将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。
+"""
+#归并排序递归版
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    # 递归地将数组分成两半
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+    
+    # 递归地对左右两半进行归并排序
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
+    
+    # 合并已排序的左右两半
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    result = []
+    left_index, right_index = 0, 0
+    
+    # 合并两个有序数组
+    while left_index < len(left) and right_index < len(right):
+        if left[left_index] < right[right_index]:
+            result.append(left[left_index])
+            left_index += 1
+        else:
+            result.append(right[right_index])
+            right_index += 1
+            
+    # 将剩余的元素添加到结果中
+    result.extend(left[left_index:])
+    result.extend(right[right_index:])
+    
+    return result
+
 if __name__ == '__main__':
     # 示例
-    arr = [64, 34, 25, 12, 22, 11, 90]
-    selection_sort(arr)
+    arr = [64, 34, 25, 12, 22, 11, 90,45,27]
+    arr= merge_sort(arr)
     print("排序后的数组：", arr)
